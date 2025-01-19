@@ -1,5 +1,5 @@
 {
-  "name": "arsenal",
+  "name": "@clustr/arsenal",
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
