@@ -1,7 +1,7 @@
 {
   "name": "@clustr/arsenal",
-  "version": "0.0.1",
-  "main": "index.js",
+  "version": "0.0.2",
+  "main": "src/main.js",
   "scripts": {
     "test": "node --test tests/*.test.js"
   },
