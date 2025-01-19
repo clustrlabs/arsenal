@@ -35,7 +35,7 @@ bun install @clustr/arsenal
 ## Usage
 
 ```javascript
-const { Swarm, Skill } = require("../../src/main");
+const { Swarm, Skill } = require("@clustr/arsenal");
 
 const { Agent } = new Swarm();
 
