@@ -7,7 +7,8 @@
   },
   "author": "Clustr Labs",
   "license": "MIT",
-  "description": "",
+  "description": "Multi-threaded, unopinionated, and task-agnostic AI agent framework.",
+  "repository": "https://github.com/clustrlabs/arsenal",
   "dependencies": {
     "ajv": "^8.17.1",
     "axios": "^1.7.9",
