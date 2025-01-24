@@ -2,7 +2,7 @@
 
 This AI agent is equipped with a Puppeteer-powered web scraper.
 
-Advanced workflows often require real-time access to the internet, and this `scrape_website_url` serves as a great starting point to build an AI agent capable of headless headless automation.
+Advanced workflows often require real-time access to the internet, and this `scrape_website_url` serves as a great starting point to build an AI agent capable of advanced headless automation.
 
 ## web-scraper.js
 

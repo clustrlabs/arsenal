@@ -1,4 +1,4 @@
-const { Skill } = require("../main");
+const { Skill, Plugin } = require("../main");
 const ethers = require("ethers");
 
 function createSchema(properties) {

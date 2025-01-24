@@ -127,6 +127,8 @@ class Agent {
 
         this.messages = [];
 
+        this.env = new Map();
+
         if (config !== defaultConfig) {
             if (typeof config !== "object") {
                 throw new Error();
@@ -145,6 +147,14 @@ class Agent {
         }
     }
 
+    async set(key, value) {
+        return this.env.set(key, value);
+    }
+
+    async get(key) {
+        return this.env.get(key);
+    }
+
     async clone(preserveHistory = false) {
         const agentClone = new Agent(this.config);
         agentClone.id = randomUUID();
@@ -155,14 +165,28 @@ class Agent {
         return agentClone;
     }
 
-    async use(oneOrMoreFunctions) {
-        if (typeof oneOrMoreFunctions !== "object")  {
+    async use(plugin) {
+        if (typeof plugin !== 'object') {
             throw new Error();
         }
-        this.functions = this.functions.concat(oneOrMoreFunctions);
+        const skillIds = Object.keys(plugin);
+        const skillNum = skillIds.length;
+        if (skillNum === 0) {
+            throw new Error();
+        }
+        for (let i = 0; i < skillNum; i++) {
+            const skill = plugin[skillIds[i]];
+            if (!(skill instanceof Skill)) {
+                throw new Error();
+            }
+            this.functions = this.functions.concat([skill]);
+            if (i === skillNum - 1) {
+                return Promise.resolve('Plugin loaded')
+            }
+        }
     }
 
-    async do(prompt, functions) {
+    async do(prompt, functions = []) {
         this.state = "working";
 
         functions = this.functions.concat(functions);
