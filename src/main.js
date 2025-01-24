@@ -166,7 +166,7 @@ class Agent {
     }
 
     async use(plugin) {
-        if (typeof plugin !== 'object') {
+        if (typeof plugin !== "object") {
             throw new Error();
         }
         const skillIds = Object.keys(plugin);
@@ -181,7 +181,7 @@ class Agent {
             }
             this.functions = this.functions.concat([skill]);
             if (i === skillNum - 1) {
-                return Promise.resolve('Plugin loaded')
+                return Promise.resolve("Plugin loaded")
             }
         }
     }
